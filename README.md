@@ -32,6 +32,10 @@
 
 ```text
 summary-skills/
+├─ install.ps1
+├─ install.sh
+├─ uninstall.ps1
+├─ uninstall.sh
 ├─ docs/
 │  ├─ 国内/
 │  ├─ 国外/
@@ -74,6 +78,47 @@ summary-skills/
 3. 最后看 [docs/棱镜总结法PRISM.md](./docs/棱镜总结法PRISM.md)，理解如何把多种方法融合成统一流程。
 
 ### 2. 作为 Codex skill 使用
+
+现在仓库已经支持一键安装到 Codex 的标准 skill 目录。
+
+安装脚本默认会扫描并安装仓库内所有顶层 skill 目录；当前仓库会安装 `summarize-anything`。
+
+Windows PowerShell：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+macOS / Linux：
+
+```bash
+bash ./install.sh
+```
+
+默认安装位置：
+
+- 如果设置了 `CODEX_HOME`，安装到 `$CODEX_HOME/skills`
+- 否则安装到 `~/.codex/skills`
+
+可选参数：
+
+- `-Skill summarize-anything` 或 `--skill summarize-anything`：只安装单个 skill
+- `-TargetRoot <path>` 或 `--target-root <path>`：安装到自定义目录
+- `-Mode link` 或 `--mode link`：使用符号链接，便于开发时实时同步
+
+说明：
+
+- `link` 模式在 Windows 上可能需要开发者模式或更高权限；失败时改用默认的 `copy` 模式即可。
+
+卸载命令：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
+```
+
+```bash
+bash ./uninstall.sh
+```
 
 如果你的环境支持显式引用本地 skill，可以直接在任务中使用：
 
