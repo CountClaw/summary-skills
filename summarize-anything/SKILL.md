@@ -1,71 +1,58 @@
 ---
 name: summarize-anything
-description: 面向文章、书籍、课程、会议记录、访谈、项目过程、工作汇报、故事剧情、个人复盘等内容的通用总结技能。用于在未指定方法时自动选择 PRISM、GIST、SAAC、5W1H、SWBST、STAR、KPT、AAR、Gibbs、渐进式总结、费曼技巧等框架，产出一句话摘要、结构化纪要、读书笔记、复盘结论、行动项或可归档总结。
+description: General-purpose summarization skill for articles, books, courses, meetings, interviews, project notes, work reports, stories, and reflection logs. Use when Codex needs to auto-pick PRISM, GIST, SAAC, 5W1H, SWBST, STAR, KPT, AAR, Gibbs, Progressive Summarization, or the Feynman Technique to produce one-line summaries, structured notes, reading notes, retros, action items, or archive-ready summaries.
 ---
 
 # Summarize Anything
 
-## 核心工作流
+## Workflow
 
-1. 先确认四个约束：总结对象、输出目的、读者、长度或格式。
-2. 先判定内容类型，再只选一个主方法；只有在“总结 + 行动”或“知识沉淀 + 理解检验”这类复合任务中才组合方法。
-3. 先抽取事实、事件、数据、观点、感受，再进入解释和结论，避免把记录直接当总结。
-4. 按模板输出，并让结果可复用：复盘类补行动项，学习类补关键洞察或疑问，汇报类补结果与价值。
-5. 原始材料不完整时，明确标注 `已知信息`、`推测`、`待确认`，不要补造事实。
+1. Confirm object, goal, audience, and length or format.
+2. Pick one primary method by content type. Combine methods only when needed.
+3. Extract facts, events, numbers, claims, and feelings before interpretation.
+4. Output reusable structure: actions for retros, insights or questions for learning, results for reporting.
+5. If the source is incomplete, mark `Known`, `Inferred`, and `Unknown`. Do not invent facts.
 
-## 选法规则
+## Method Choice
 
-- 用户明确指定方法时，直接遵守。
-- 用户只说“帮我总结”或材料混杂时，默认用 `PRISM`，并在结构阶段套用最贴近的模板。
-- 把“快”优先于“全”时，优先 `GIST`、`SAAC`、`3-2-1`。
-- 把“事实完整”优先于“观点深度”时，优先 `5W1H`、`SAAC`、`STAR`。
-- 把“复盘和改进”优先于“概括内容”时，优先 `KPT`、`AAR`、`Gibbs`、`PRISM-FACT`。
-- 把“学习吸收和知识沉淀”优先时，优先 `渐进式总结`、`费曼技巧`、`SQ3R变体`。
-- 把“故事线”优先时，优先 `SWBST`。
-- 需要更细的映射时，先读取 [references/method-map.md](./references/method-map.md)。
+- Respect a user-specified method.
+- If the user only says “summarize” or the material is mixed, default to `PRISM`.
+- Speed first: `GIST`, `SAAC`, `3-2-1`.
+- Facts first: `5W1H`, `SAAC`, `STAR`.
+- Retro or improvement first: `KPT`, `AAR`, `Gibbs`, `PRISM-FACT`.
+- Learning or knowledge capture first: `Progressive Summarization`, `Feynman`, `SQ3R variant`.
+- Storyline first: `SWBST`.
+- Need finer mapping: read [references/method-map.md](./references/method-map.md).
 
-## 常用输出策略
+## Output Defaults
 
-- 一句话摘要：`GIST` 或 `SAAC`。
-- 一段式文本摘要：`SAAC`、`5W1H`、`SWBST`。
-- 结构化纪要或汇报：`5W1H`、`STAR`、`PRISM-FACT`。
-- 周报、月报、个人反思：`KPT+` 或 `3-2-1`。
-- 项目、活动、事件复盘：`AAR` 或 `PRISM-FACT`。
-- 深度个人反思：`Gibbs`。
-- 读书、课程、知识卡片：`渐进式总结`、`费曼技巧`、`SQ3R变体`。
+- Default output when no format is given:
+  1. One-line summary
+  2. 3-5 key points
+  3. Actions or insights when relevant
+- Do not explain methodology unless the structure depends on it.
+- Preserve names, numbers, dates, and causality.
+- In retros, separate `Facts`, `Analysis`, `Conclusion`, and `Actions`.
+- For rough notes, transcripts, or meeting raw text, deduplicate and rebuild the timeline first.
 
-## 组合规则
+## Method Combos
 
-- 用 `PRISM + FACT` 处理项目、工作、阶段性复盘。
-- 用 `渐进式总结 + 费曼技巧` 处理书籍、课程、概念学习。
-- 用 `5W1H + SAAC` 处理信息类材料：先提取事实，再压成一段话。
-- 用 `KPT + 3-2-1` 处理轻量周总结：先列保持、问题、尝试，再附一个未解决问题。
-- 不要机械地同时堆叠三个以上方法。
+- `PRISM + FACT` for project or work retros.
+- `Progressive Summarization + Feynman` for books, courses, and concepts.
+- `5W1H + SAAC` for information-heavy material.
+- `KPT + 3-2-1` for lightweight weekly review.
+- Do not stack 3+ methods without a clear reason.
 
-## 输出规范
+## Resource Loading
 
-- 直接给出总结结果，不先长篇解释方法论。
-- 只有在方法影响结构或用户要求时，简短说明“本次采用的方法”。
-- 保留来源中的关键名词、数字、时间和因果关系。
-- 复盘类任务把 `事实`、`分析`、`结论`、`行动` 分开写。
-- 学习类任务至少补一个“我能如何复述或应用”或“仍待澄清的问题”。
-- 如果输入是杂乱笔记、转写稿或会议原话，先去重、并项、补时间线，再输出正式总结。
-- 如果用户没有给长度要求，默认提供：
-  1. 一句话摘要
-  2. 3-5 条要点
-  3. 适用时附行动项或启发
+- Read [references/method-map.md](./references/method-map.md) for method selection.
+- Read [references/output-templates.md](./references/output-templates.md) for concrete structures.
+- Read [references/source-index.md](./references/source-index.md) only when you need to trace back to the Chinese source docs.
 
-## 资源读取
+## Trigger Examples
 
-- 先读 [references/method-map.md](./references/method-map.md) 做方法选择。
-- 需要具体结构时再读 [references/output-templates.md](./references/output-templates.md)。
-- 需要追溯原始方法说明、边界或细节时，再读 [references/source-index.md](./references/source-index.md) 中列出的仓库文档。
-
-## 触发示例
-
-- “帮我把这篇文章总结成一句话和三条要点。”
-- “把这份会议记录整理成纪要和行动项。”
-- “帮我做一次项目复盘，总结经验和下次改进。”
-- “把这个故事或电影剧情讲清楚。”
-- “读完这本书后，帮我整理成可归档的读书笔记。”
-- “把我的周报素材整理成结构清晰的总结。”
+- “Summarize this article in one line and three bullets.”
+- “Turn this meeting transcript into notes and action items.”
+- “Write a retro for this project and give next-step actions.”
+- “Explain this movie plot clearly without turning it into a review.”
+- “Turn this book into archive-ready reading notes.”

@@ -1,36 +1,28 @@
-# 输出模板
+# Output Templates
 
-## 目录
-
-- 极简摘要
-- 信息提取
-- 叙事与案例
-- 复盘与行动
-- 学习与知识沉淀
-
-## 极简摘要
+## Minimal Summary
 
 ### GIST
 
 ```markdown
-一句话摘要：[[不超过 20 个词或 30-40 个中文字符]]
+One-line summary: [[<= 20 words]]
 ```
 
 ### SAAC
 
 ```markdown
-在《[标题]》中，[作者/发布方] [讲述/解释/论证/分析] 了 [核心观点 + 关键细节]。
+In [Title], [Author / Source] [explains / argues / describes / analyzes] [core idea + key detail].
 ```
 
-## 信息提取
+## Information Extraction
 
 ### 5W1H
 
 ```markdown
-## 核心事实
+## Core Facts
 
-| 维度 | 内容 |
-|------|------|
+| Field | Value |
+|------|-------|
 | Who | |
 | What | |
 | When | |
@@ -38,54 +30,54 @@
 | Why | |
 | How | |
 
-一句话结论：
+One-line takeaway:
 -
 ```
 
-### 会议纪要简版
+### Meeting Notes
 
 ```markdown
-## 会议主题
+## Topic
 -
 
-## 核心结论
+## Key Decisions
 1.
 2.
 3.
 
-## 行动项
-| 事项 | 负责人 | 截止时间 |
-|------|--------|----------|
+## Action Items
+| Item | Owner | Due |
+|------|-------|-----|
 |      |        |          |
 ```
 
-## 叙事与案例
+## Narrative and Cases
 
 ### SWBST
 
 ```markdown
-[Somebody] 想要 [Wanted]，但是 [But]，所以 [So]，然后 [Then]。
+[Somebody] wanted [Wanted], but [But], so [So], then [Then].
 ```
 
 ### STAR
 
 ```markdown
-## S 情境
+## S Situation
 -
 
-## T 任务
+## T Task
 -
 
-## A 行动
+## A Action
 1.
 2.
 3.
 
-## R 结果
+## R Result
 -
 ```
 
-## 复盘与行动
+## Retro and Action
 
 ### KPT+
 
@@ -104,8 +96,8 @@
 2.
 
 ## Try
-1. [对应问题 __] 方案：__
-2. [对应问题 __] 方案：__
+1. [For problem __] Plan: __
+2. [For problem __] Plan: __
 
 ## Direction
 -
@@ -114,38 +106,38 @@
 ### 3-2-1
 
 ```markdown
-## 3 个学到的要点
+## 3 Key Learnings
 1.
 2.
 3.
 
-## 2 个有趣的发现
+## 2 Interesting Findings
 1.
 2.
 
-## 1 个仍未解决的问题
+## 1 Open Question
 -
 ```
 
 ### AAR
 
 ```markdown
-## 原本计划
+## Expected
 -
 
-## 实际发生
+## Actual
 -
 
-## 差距原因
-- 内部因素：
-- 外部因素：
+## Why the Gap
+- Internal:
+- External:
 
-## 我们学到什么
+## Lessons
 1.
 2.
 3.
 
-## 下次行动
+## Next Actions
 1.
 2.
 ```
@@ -160,8 +152,8 @@
 -
 
 ## Evaluation
-- 做得好的：
-- 做得不好的：
+- Worked:
+- Didn't work:
 
 ## Analysis
 -
@@ -179,21 +171,21 @@
 
 ```markdown
 ## P Prepare
-- 目的：
-- 读者：
-- 时间边界：
+- Goal:
+- Audience:
+- Scope:
 
 ## R Record
-- 关键事实：
-- 关键数据：
-- 关键事件：
+- Facts:
+- Numbers:
+- Events:
 
 ## I Interpret
-- 差距或模式：
-- 根因：
-- 核心洞察：
+- Gap or pattern:
+- Root cause:
+- Key insight:
 
-## S Structure（FACT）
+## S Structure (FACT)
 ### Facts
 -
 
@@ -210,13 +202,13 @@
 2.
 
 ## M Mobilize
-- 可复用原则：
-- 检查清单：
+- Reusable rule:
+- Checklist:
 ```
 
-## 学习与知识沉淀
+## Learning and Knowledge Capture
 
-### SQ3R 变体
+### SQ3R Variant
 
 ```markdown
 ## Survey
@@ -239,41 +231,41 @@
 -
 ```
 
-### 渐进式总结
+### Progressive Summarization
 
 ```markdown
-## Layer 1 原始素材
+## Layer 1 Raw Material
 -
 
-## Layer 2 加粗重点
+## Layer 2 Bold
 -
 
-## Layer 3 高亮精华
+## Layer 3 Highlight
 -
 
 ## Layer 4 Executive Summary
 -
 
-## Layer 5 一句话金句
+## Layer 5 One-Line Quote
 -
 ```
 
-### 费曼技巧
+### Feynman
 
 ```markdown
-## 要解释的主题
+## Topic
 -
 
-## 用简单语言解释
+## Explain in Plain Language
 -
 
-## 解释不清的地方
+## Unclear Parts
 1.
 2.
 
-## 补学后的再解释
+## Re-explain After Review
 -
 
-## 我如何应用
+## How I Will Apply It
 -
 ```

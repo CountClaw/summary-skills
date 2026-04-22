@@ -1,56 +1,48 @@
-# 方法选型速查
+# Method Map
 
-## 目录
+## Priority
 
-- 默认顺序
-- 场景到方法
-- 长度到方法
-- 组合建议
-- 选择禁忌
+1. Use the method explicitly requested by the user.
+2. Otherwise pick the closest single method by content type.
+3. Use `PRISM` as the fallback.
 
-## 默认顺序
+## By Scenario
 
-1. 用户明确指定的方法。
-2. 与内容类型最贴近的单一方法。
-3. `PRISM` 作为兜底总框架。
+| Scenario | Primary | Backup | Focus |
+|----------|---------|--------|-------|
+| Article, report, non-fiction text | `SAAC` | `5W1H`, `GIST` | Core idea, key detail, source |
+| News, notice, event, meeting notes | `5W1H` | `SAAC` | Who, what, when, where, why, how |
+| Story, film plot, narrative case | `SWBST` | `SAAC` | Character, goal, conflict, response, ending |
+| Work example, project result, interview case | `STAR` | `PRISM-FACT` | Situation, task, action, result |
+| Weekly review, light reflection | `KPT+` | `3-2-1` | Keep, problem, try, next step |
+| Project, event, retrospective | `AAR` | `PRISM-FACT` | Plan, actual, gap, lesson, action |
+| Deep personal reflection | `Gibbs` | `KPT+` | Description, feelings, evaluation, analysis, plan |
+| Reading notes, course notes, knowledge capture | `Progressive Summarization` | `SQ3R`, `Feynman` | Compression, retell, links, reuse |
+| Concept understanding or explanation | `Feynman` | `GIST` | Plain-language explanation, blind spots |
+| Year-end or broad work report | `Six Work Summary Angles` | `STAR`, `PRISM-FACT` | Organization, highlights, impact, next plan |
+| User only says “summarize” or gives mixed material | `PRISM` | `AAR`, `KPT+` | End-to-end structure from goal to action |
 
-## 场景到方法
+## By Length
 
-| 场景或输入 | 首选方法 | 备选方法 | 输出重点 |
-|-----------|----------|----------|----------|
-| 文章、报告、说明文、通用非虚构文本 | `SAAC` | `5W1H`、`GIST` | 核心观点、关键细节、来源 |
-| 新闻、公告、事件信息、会议纪要 | `5W1H` | `SAAC` | 谁、什么、何时、何地、为什么、如何 |
-| 故事、电影、案例剧情、小说情节 | `SWBST` | `SAAC` | 主角、目标、冲突、应对、结局 |
-| 工作经历、项目成果、面试案例 | `STAR` | `PRISM-FACT` | 情境、任务、行动、结果 |
-| 周报、月报、轻量反思 | `KPT+` | `3-2-1` | 保持、问题、尝试、下一步 |
-| 项目、活动、事件复盘 | `AAR` | `PRISM-FACT` | 计划、实际、差距、经验、行动 |
-| 深度个人反思、情绪复盘 | `Gibbs` | `KPT+` | 描述、感受、评估、分析、结论、行动 |
-| 读书笔记、课程总结、知识沉淀 | `渐进式总结` | `SQ3R变体`、`费曼技巧` | 层级压缩、复述、连接、调用 |
-| 新知识理解检验、概念解释 | `费曼技巧` | `GIST` | 用自己的话讲清楚、暴露盲区 |
-| 年终工作汇报、综合阶段总结 | `工作总结六种切入法` | `STAR`、`PRISM-FACT` | 组织方式、亮点、成效、问题与计划 |
-| 用户只说“帮我总结”或材料混合 | `PRISM` | `AAR`、`KPT+` | 从目标到行动的全流程结构 |
+| Target Length | Prefer | Use For |
+|---------------|--------|---------|
+| 1 sentence | `GIST` | Extreme compression |
+| 1 paragraph | `SAAC`, `SWBST` | Short summary |
+| 3-6 bullets | `5W1H`, `3-2-1` | Notes, class recap, light review |
+| Structured report | `STAR`, `AAR`, `KPT+`, `Gibbs` | Reporting, retros, reflection |
+| Full summary loop | `PRISM-FACT` | Complex or archive-ready output |
 
-## 长度到方法
+## Useful Combos
 
-| 目标长度 | 优先方法 | 说明 |
-|----------|----------|------|
-| 1 句话 | `GIST` | 适合极限压缩和标题式摘要 |
-| 1 段话 | `SAAC`、`SWBST` | 适合短摘要和读后一句话总结 |
-| 3-6 条要点 | `5W1H`、`3-2-1` | 适合纪要、课堂、轻量复盘 |
-| 结构化报告 | `STAR`、`AAR`、`KPT+`、`Gibbs` | 适合汇报、复盘、成长记录 |
-| 完整总结闭环 | `PRISM-FACT` | 适合复杂、多目标、可归档总结 |
+- `PRISM + FACT` for project or work retros.
+- `Progressive Summarization + Feynman` for books, courses, and concepts.
+- `5W1H + SAAC` for information-dense material.
+- `KPT + 3-2-1` for low-cost weekly review.
 
-## 组合建议
+## Avoid
 
-- `PRISM + FACT`：复杂项目、工作阶段复盘。
-- `渐进式总结 + 费曼技巧`：读书、课程、概念学习。
-- `5W1H + SAAC`：先抽事实，再压缩成一段摘要。
-- `KPT + 3-2-1`：用低成本方式补“收获”和“疑问”。
-
-## 选择禁忌
-
-- 不要用 `SWBST` 处理非叙事信息。
-- 不要在缺少主观体验材料时硬套 `Gibbs`。
-- 不要把 `KPT` 当成大型项目的唯一复盘框架。
-- 不要在需要完整背景时只交付 `GIST`。
-- 不要在一个回答里机械堆叠多个方法名而没有明确分工。
+- Do not use `SWBST` for non-narrative material.
+- Do not force `Gibbs` without subjective or emotional input.
+- Do not use `KPT` alone for a large project retro.
+- Do not output only `GIST` when full context matters.
+- Do not stack methods without clear roles.

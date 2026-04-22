@@ -1,4 +1,4 @@
 interface:
-  display_name: "通用总结"
-  short_description: "按场景自动选用 PRISM、KPT、GIST 等方法完成总结"
-  default_prompt: "Use $summarize-anything 帮我把这份材料整理成结构化总结，并根据内容类型自动选择合适方法。"
+  display_name: "Summarize Anything"
+  short_description: "Auto-pick PRISM, KPT, GIST, SAAC, STAR, AAR, and more for summaries"
+  default_prompt: "Use $summarize-anything to turn this material into a structured summary and choose the best method automatically."
