@@ -33,7 +33,9 @@
 ```text
 summary-skills/
 ├─ install.ps1
+├─ install-remote.ps1
 ├─ install.sh
+├─ install-remote.sh
 ├─ uninstall.ps1
 ├─ uninstall.sh
 ├─ docs/
@@ -95,6 +97,20 @@ macOS / Linux：
 bash ./install.sh
 ```
 
+远程一行命令安装：
+
+Windows PowerShell：
+
+```powershell
+irm https://raw.githubusercontent.com/CountClaw/summary-skills/master/install-remote.ps1 | iex
+```
+
+macOS / Linux：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/CountClaw/summary-skills/master/install-remote.sh | bash
+```
+
 默认安装位置：
 
 - 如果设置了 `CODEX_HOME`，安装到 `$CODEX_HOME/skills`
@@ -109,6 +125,36 @@ bash ./install.sh
 说明：
 
 - `link` 模式在 Windows 上可能需要开发者模式或更高权限；失败时改用默认的 `copy` 模式即可。
+- 远程一行命令安装只支持 `copy` 模式，因为脚本会在临时目录下载仓库归档后再调用本地安装器。
+
+远程安装的自定义参数通过环境变量传递，可用项包括：
+
+- `SUMMARY_SKILLS_REPO`
+- `SUMMARY_SKILLS_REF`
+- `SUMMARY_SKILLS_TARGET_ROOT`
+- `SUMMARY_SKILLS_SKILL`
+
+PowerShell：
+
+```powershell
+$env:SUMMARY_SKILLS_SKILL = "summarize-anything"
+$env:SUMMARY_SKILLS_TARGET_ROOT = "$HOME\\.codex\\skills"
+irm https://raw.githubusercontent.com/CountClaw/summary-skills/master/install-remote.ps1 | iex
+```
+
+```powershell
+$env:SUMMARY_SKILLS_REF = "master"
+irm https://raw.githubusercontent.com/CountClaw/summary-skills/master/install-remote.ps1 | iex
+```
+
+Bash：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/CountClaw/summary-skills/master/install-remote.sh | \
+  SUMMARY_SKILLS_SKILL=summarize-anything \
+  SUMMARY_SKILLS_TARGET_ROOT="$HOME/.codex/skills" \
+  bash
+```
 
 卸载命令：
 
